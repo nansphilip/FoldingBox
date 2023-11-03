@@ -22,12 +22,9 @@ for (let i = 0; i < sections.length; i++) {
                 arrows[e].style.transform = 'rotate(0deg)';
             }
 
-            // const hrHeight = sections[i].querySelector('hr').offsetHeight;
-            // const pHeight = sections[i].querySelector('p').offsetHeight;
-            // const totalHeight = hrHeight + pHeight + 32;
             let totalHeight = 0;
             Array.from(sections[i].children).forEach((child) => {
-                totalHeight += child.offsetHeight;
+                totalHeight += child.scrollHeight;
             })
             console.log(Array.from(sections[i].children));
             console.log(totalHeight);
