@@ -4,7 +4,7 @@ const arrows = document.querySelectorAll("img");
 // For each section, add an event listener to the click event
 for (let i = 0; i < sections.length; i++) {
     sections[i].addEventListener("click", () => {
-        
+
         // If the section contains '.active', remove it and set the height to default (32px)
         if (sections[i].classList.contains("active")) {
             sections[i].classList.remove("active");
@@ -12,7 +12,7 @@ for (let i = 0; i < sections.length; i++) {
             arrows[i].style.transform = 'rotate(0deg)';
 
         }
-        
+
         // Else, remove '.active' and set the height to default (32px) on every sections,
         // then add '.active' and set the measured height to the clicked section
         else {
