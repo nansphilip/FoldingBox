@@ -1,0 +1,74 @@
+/* ACCORDION */
+.accordion {
+    border: 1px solid var(--gray3);
+    border-radius: 0.5rem;
+    margin: 0.2rem;
+
+    height: 2rem;
+    width: 40vw;
+
+    background-color: white;
+}
+
+.accordion:hover {
+    width: 42vw;
+    background-color: var(--gray1);
+}
+
+.accordion:hover .accordion-header,
+.accordion:hover .accordion-body {
+    padding: 0 1vw;
+}
+
+
+/* ACCORDION HEADER */
+.accordion-header {
+    height: 2rem;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+
+.accordion-arrow {
+    margin-left: 0.5rem;
+    transform: rotate(-90deg);
+}
+
+.accordion-title {
+    width: 100%;
+    margin-left: 0.5rem;
+    margin-right: 2.5rem;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+
+/* ACCORDION BODY */
+.accordion-body > p {
+    margin: 0.5rem 1rem;
+    text-align: left;
+    line-height: 1.25rem;
+}
+
+
+/* ACTIVE */
+.active .accordion-arrow {
+    transform: rotate(0deg);
+}
+
+
+/* Timings */
+.active,
+.accordion,
+.accordion-header,
+.accordion-arrow,
+.accordion-body,
+
+.accordion:hover,
+.accordion:hover .accordion-header,
+.accordion:hover .accordion-body { 
+    transition: 300ms;
+}

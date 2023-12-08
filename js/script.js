@@ -1,37 +1,74 @@
-const sections = document.querySelectorAll("section");
-const arrows = document.querySelectorAll("img");
+/**
+ * Folds (closes) an accordion element.
+ * 
+ * This function removes the 'active' class from the specified accordion element,
+ * sets its height to its scrollHeight, and then resets the height to its default
+ * value after a brief timeout. This creates a visual effect of the accordion
+ * collapsing.
+ *
+ * @param {Element} accordionEl - The accordion element to be folded.
+ */
+const Fold = (accordionEl) => {
+    const height = accordionEl.scrollHeight;
 
-// For each section, add an event listener to the click event
-for (let i = 0; i < sections.length; i++) {
-    sections[i].addEventListener("click", () => {
+    accordionEl.classList.remove('active');
+    accordionEl.style.height = height + 'px';
 
-        // If the section contains '.active', remove it and set the height to default (32px)
-        if (sections[i].classList.contains("active")) {
-            sections[i].classList.remove("active");
-            sections[i].style.height = `32px`;
-            arrows[i].style.transform = 'rotate(0deg)';
+    setTimeout(() => {
+        accordionEl.style.height = '';
+    }, 1);
+};
 
+/**
+ * Unfolds (opens) an accordion element.
+ * 
+ * This function adds the 'active' class to the specified accordion element and
+ * initially sets its height to its scrollHeight. After a brief timeout, the
+ * height is changed to 'auto', allowing for a smooth transition effect. This
+ * creates a visual effect of the accordion expanding.
+ *
+ * @param {Element} accordionEl - The accordion element to be unfolded.
+ */
+const Unfold = (accordionEl) => {
+    accordionEl.classList.add('active');
+    const height = accordionEl.scrollHeight;
+
+    setTimeout(() => {
+        accordionEl.style.height = height + 'px';
+    }, 1);
+    
+    setTimeout(() => {
+        accordionEl.style.height = 'auto';
+    }, 300);
+};
+
+/**
+ * Initializes each accordion element with click event listeners.
+ * 
+ * This script selects all elements with the class 'accordion' and attaches
+ * a click event listener to each. When an accordion is clicked, it checks if
+ * the clicked element is currently active. If it is active, it triggers the
+ * Fold function to close it. If it's not active, it closes all other accordions
+ * by triggering the Fold function on each, and then opens the clicked accordion
+ * by triggering the Unfold function.
+ */
+const accordionElList = document.querySelectorAll('.accordion');
+
+accordionElList.forEach((accordionEl) => {
+    accordionEl.addEventListener('click', () => {
+
+        const isActive = accordionEl.classList.contains('active');
+
+        if (isActive) {
+            Fold(accordionEl);
         }
 
-        // Else, remove '.active' and set the height to default (32px) on every sections,
-        // then add '.active' and set the measured height to the clicked section
         else {
-            for (let e = 0; e < sections.length; e++) {
-                sections[e].classList.remove("active");
-                sections[e].style.height = `32px`;
-                arrows[e].style.transform = 'rotate(0deg)';
-            }
+            accordionElList.forEach((accEl) => {
+                Fold(accEl);
+            });
 
-            let totalHeight = 0;
-            Array.from(sections[i].children).forEach((child) => {
-                totalHeight += child.scrollHeight;
-            })
-            console.log(Array.from(sections[i].children));
-            console.log(totalHeight);
-
-            sections[i].style.height = `${totalHeight}px`;
-            arrows[i].style.transform = 'rotate(90deg)';
-            sections[i].classList.add("active");
+            Unfold(accordionEl);
         }
     });
-}
+});

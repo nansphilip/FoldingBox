@@ -8,32 +8,54 @@
     <meta name="description" content="This is an accordion.">
     <link rel="stylesheet" href="/css/imports.css">
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="/css/class.css">
 </head>
 
 <body>
     <main>
-        <section>
-            <div><img src="/assets/arrow.svg"><span>Hello</span><span class="imgBalance"></span></div>
+        <section class="accordion">
+            <div class="accordion-header">
+                <img class="accordion-arrow" src="/assets/arrow.svg">
+                <span class="accordion-title">Texte court</span>
+            </div>
             <hr>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat minus adipisci delectus.</p>
+            <div class="accordion-body"> 
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, neque voluptatem.</p>
+            </div>
         </section>
-        <section>
-            <div><img src="/assets/arrow.svg"><span>Hella</span><span class="imgBalance"></span></div>
+
+        <section class="accordion">
+            <div class="accordion-header">
+                <img class="accordion-arrow" src="/assets/arrow.svg">
+                <span class="accordion-title">Texte moyen</span>
+            </div>
             <hr>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat minus adipisci delectus. Lorem ipsum
-                dolor sit amet consectetur adipisicing elit. Repellat minus adipisci delectus. Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Repellat minus adipisci delectus.</p>
+            <div class="accordion-body">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis explicabo aliquam exercitationem,
+                    magnam amet recusandae maxime nisi corporis obcaecati dolor cupiditate.
+                </p>
+            </div>
         </section>
-        <section>
-            <div><img src="/assets/arrow.svg"><span>Hellu</span><span class="imgBalance"></span></div>
+
+        <section class="accordion">
+            <div class="accordion-header">
+                <img class="accordion-arrow" src="/assets/arrow.svg">
+                <span class="accordion-title">Texte loooong</span>
+            </div>
             <hr>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat minus adipisci delectus. Lorem ipsum
-                dolor sit amet consectetur adipisicing elit. Repellat minus adipisci delectus.</p>
+            <div class="accordion-body">
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius voluptate vero soluta voluptatum
+                    error. Quibusdam expedita inventore modi ducimus eaque. Tenetur ducimus, magni magnam eveniet dolor
+                    quisquam molestias nobis tempora! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit
+                    quis facilis dolor necessitatibus, quod voluptates similique temporibus voluptatem quibusdam
+                    doloremque explicabo saepe maiores ipsa asperiores eveniet ratione quisquam ullam accusamus.
+                </p>
+            </div>
         </section>
     </main>
-    <script type="module" src="/js/script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 
 </html>

@@ -27,69 +27,7 @@ main {
     justify-content: center;
 }
 
-/* SECTIONS */
-section {
-    border: 1px solid var(--gray3);
-    border-radius: 0.5rem;
-    margin: 0.2rem;
-
-    height: 2rem;
-    width: 40vw;
-
-    transition: 200ms;
-}
-
-section:hover {
-    background-color: var(--gray1);
-    width: 42vw;
-
-    transition: 200ms;
-}
-
-
-/* DIVISIONS */
-section>div {
-    height: 2rem;
-    width: 100%;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-/* PARAGRAPH */
-section>p {
-    padding: 0.5rem 1rem;
-    text-align: justify;
-    justify-content: center;
-    transition: 200ms;
-}
-
-section:hover>p {
-    padding: 0.5rem calc(1rem + 1vw);
-    transition: 200ms;
-}
-
-
-/* IMAGE */
-img {
-    rotate: 270deg;
-    height: 2rem;
-    width: 2rem;
-    transition: 200ms;
-}
-
-.imgBalance {
-    height: 2rem;
-    width: 2rem;
-}
-
-
-/* OTHER */
 hr {
-    color: black;
+    margin: 0 5%;
     width: 90%;
-    margin-left: 5%;
 }
