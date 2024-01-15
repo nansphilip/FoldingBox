@@ -5,19 +5,20 @@
     margin: 0.2rem;
 
     height: 2rem;
-    width: 40vw;
+    width: 50vw;
 
     background-color: white;
+    overflow: hidden;
 }
 
 .accordion:hover {
-    width: 42vw;
+    width: 54vw;
     background-color: var(--gray1);
 }
 
 .accordion:hover .accordion-header,
 .accordion:hover .accordion-body {
-    padding: 0 1vw;
+    padding: 0 2vw;
 }
 
 
@@ -43,6 +44,7 @@
     margin-right: 2.5rem;
     font-size: 1.1rem;
     text-align: center;
+    text-wrap: nowrap;
 }
 
 
